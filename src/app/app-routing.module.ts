@@ -10,8 +10,8 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
 
 const routes: Routes = [
   { path: "success", component: SuccessComponent },
-  { path: "survey", component: SurveyformComponent },
   { path: "results/:id", component: SurveydetailComponent },
+  { path: "survey", component: SurveyformComponent },
   { path: "results", component: SurveysComponent },
   { path: "about", component: AboutComponent },
   { path: "", component: LandingpageComponent },
