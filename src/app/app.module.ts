@@ -17,6 +17,7 @@ import { SuccessComponent } from "./success/success.component";
 import { SurveyformComponent } from "./surveyform/surveyform.component";
 import { SurveysComponent } from "./surveys/surveys.component";
 import { SurveydetailComponent } from "./surveydetail/surveydetail.component";
+import { DataService } from './shared/data.service';
 
 
 @NgModule({
@@ -38,7 +39,7 @@ import { SurveydetailComponent } from "./surveydetail/surveydetail.component";
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
