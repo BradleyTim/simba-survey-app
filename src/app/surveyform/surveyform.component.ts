@@ -26,21 +26,21 @@ export class SurveyformComponent implements OnInit {
     'Excellent'
   ];
 
-  survey: Survey = new Survey(
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    ''
-  );
+  survey: Survey = {
+    id: '',
+    name: '',
+    email: '',
+    getToKnowUs: '',
+    purchaseLocation: '',
+    purchaseReason: '',
+    issues: '',
+    benefits: '',
+    occupation: '',
+    ageGroup: '',
+    residence: '',
+    rate: '',
+    suggestions: ''
+  };
 
   constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }
 
