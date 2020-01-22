@@ -11,8 +11,12 @@ export class DataService {
 
   }
 
+  getOneSurvey(id: string) {
+    return this.firestore.doc('surveys/' + id).get();
+  }
+
   getSurveys() {
-    return this.firestore.collection('surveys').snapshotChanges();
+    return this.firestore.collection('surveys', ref => ref.orderBy('name', 'asc')).snapshotChanges();
   }
 
   addSurvey(data) {
