@@ -1,0 +1,53 @@
+<section class="survey-detail-page">
+  <div class="survey-detail-container">
+    <h3>Person: {{survey.name | titlecase}}</h3>
+    <p>
+      <strong>Email:</strong> 
+      {{survey.email}}
+    </p>
+    <p>
+      <strong>How did you know about simba speed governor or Numeral IOT?</strong> 
+      {{survey.getToKnowUs}}
+    </p>
+    <p>
+      <strong>Where did you purchase the Simba Speed Governor?</strong> 
+      {{survey.purchaseLocation}}
+    </p>
+    <p>
+      <strong>What made you purchase the Simba Speed Governor?</strong> 
+      {{survey.purchseReason}}
+    </p>
+    <p>
+      <strong>What issues have you experienced with Simba Speed Governor?</strong> 
+      {{survey.issues}}
+    </p>
+    <p>
+      <strong>What benefits did you experience with Simba Speed Governor?</strong> 
+      {{survey.benefits}}
+    </p>
+    <p>
+      <strong>What is your job Occupation and how has simba speed Governor impacted your work or life?</strong> 
+      {{survey.occupation}}
+    </p>
+    <p>
+      <strong>Which Age group are you in?</strong> 
+      {{survey.ageGroup}}
+    </p>
+    <p>
+      <strong>What's your area of residence and have you noticed any vehicles fitted with simba speed Governor in your residence ?</strong> 
+      {{survey.residence}}
+    </p>
+    <p>
+      <strong>How would you rate Simba speed Governor?</strong> 
+      {{survey.rate}}
+    </p>
+    <p>
+      <strong>Tell us in your own words how we can improve our products and services.</strong> 
+      {{survey.suggestions}}
+    </p>
+  </div>
+
+  <div class="buttons-container">
+    <button class="btn back" (click)="onBack()">&larr; Back</button>
+  </div>
+</section>

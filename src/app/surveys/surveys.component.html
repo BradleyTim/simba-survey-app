@@ -1,0 +1,11 @@
+<section class="surveys-container" *ngIf="surveys.length > 0">
+  <div
+    [routerLink]="['/results', survey.name]"
+    class="survey"
+    *ngFor="let survey of surveys"
+  >
+    <h3 class="title">
+      {{survey.name| titlecase}}
+    </h3>
+  </div>
+</section>

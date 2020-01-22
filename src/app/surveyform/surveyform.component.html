@@ -1,0 +1,165 @@
+<section class="survey-form">
+  <form #surveyForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    <h3>Simba Survey</h3>
+    <div class="form-group">
+      <label for="name">What is your name?</label>
+      <input 
+        required
+        #nameInput="ngModel"
+        class="form-control" 
+        [class.is-invalid]="nameInput.invalid && nameInput.touched"
+        type="text" 
+        name="name" 
+        id="name"
+        [(ngModel)]="survey.name"
+      >
+      <div class="alert" [class.alert-warning]="nameInput.invalid && nameInput.touched">Name is Required</div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input 
+        required
+        #emailInput="ngModel"
+        class="form-control" 
+        [class.is-invalid]="emailInput.invalid && emailInput.touched"
+        type="email" 
+        name="email" 
+        id="email" 
+        [(ngModel)]="survey.email"
+      >
+      <div class="alert" [class.alert-warning]="emailInput.invalid && emailInput.touched">Email is Required</div>
+    </div>
+    <div class="form-group">
+      <label for="get-to-know-us">How did you know about simba speed governor or Numeral IOT?</label>
+      <textarea 
+        required
+        #getToKnowUsInput="ngModel"
+        class="form-control"
+        [class.is-invalid]="getToKnowUsInput.invalid && getToKnowUsInput.touched" 
+        name="get-to-know-us" 
+        id="get-to-know-us" 
+        cols="30" 
+        rows="5" 
+        [(ngModel)]="survey.getToKnowUs"
+      ></textarea>
+      <div class="alert" [class.alert-warning]="getToKnowUsInput.invalid && getToKnowUsInput.touched">Field is Required</div>
+    </div>
+    <div class="form-group">
+      <label for="purchase-location">Where did you purchase the Simba Speed Governor?</label>
+      <input 
+        required
+        #purchaseLocationInput="ngModel"
+        class="form-control" 
+        [class.is-invalid]="purchaseLocationInput.invalid && purchaseLocationInput.touched"
+        type="text" 
+        name="purchase-location" 
+        id="purchase-location" 
+        [(ngModel)]="survey.purchaseLocation"
+      >
+      <div class="alert" [class.alert-warning]="purchaseLocationInput.invalid && purchaseLocationInput.touched">Field is Required</div>
+    </div>
+    <div class="form-group">
+      <label for="purchase-reason">What made you purchase the Simba Speed Governor?</label>
+      <textarea 
+        required
+        #purchaseReasonInput="ngModel"
+        class="form-control"
+        [class.is-invalid]="purchaseReasonInput.invalid && purchaseReasonInput.touched" 
+        name="purchase-reason" 
+        id="purchase-reason" 
+        cols="30" 
+        rows="5" 
+        [(ngModel)]="survey.purchaseReason"
+      ></textarea>
+      <div class="alert" [class.alert-warning]="purchaseReasonInput.invalid && purchaseReasonInput.touched">Field is Required</div>
+    </div>
+    <div class="form-group">
+      <label for="issues">What issues have you experienced with Simba Speed Governor?</label>
+      <textarea 
+        required 
+        #issuesInput="ngModel"
+        class="form-control"
+        [class.is-invalid]="issuesInput.invalid && issuesInput.touched" 
+        name="issues" 
+        id="issues" 
+        cols="30" 
+        rows="5" 
+        [(ngModel)]="survey.issues"
+      ></textarea>
+      <div class="alert" [class.alert-warning]="issuesInput.invalid && issuesInput.touched">Field is Required</div>
+    </div>
+    <div class="form-group">
+      <label for="benefits">What benefits did you experience with Simba Speed Governor?</label>
+      <textarea 
+        required
+        #benefitsInput="ngModel"
+        class="form-control" 
+        [class.invalid]="benefitsInput.invalid && benefitsInput.touched"
+        name="benefits" 
+        id="benefits" 
+        cols="30" 
+        rows="5" 
+        [(ngModel)]="survey.benefits"
+      ></textarea>
+      <div class="alert" [class.alert-warning]="benefitsInput.invalid && benefitsInput.touched">Field is Required</div>
+    </div>
+    <div class="form-group">
+      <label for="occupation">What is your job Occupation and how has simba speed Governor impacted your work or life?</label>
+      <input 
+        required
+        #occupationInput="ngModel"
+        class="form-control"
+        [class.is-invalid]="occupationInput.invalid && occupationInput.touched"
+        type="text" 
+        name="occupation" 
+        id="occupation" 
+        [(ngModel)]="survey.occupation"
+      >
+      <div class="alert" [class.alert-warning]="occupationInput.invalid && occupationInput.touched">Field is Required</div>
+    </div>
+    <div class="form-group">
+      <label for="ageGroup">Which Age group are you in? </label>
+      <select class="form-control" id="ageGroup" name="ageGroup" [(ngModel)]="survey.ageGroup" required #ageGroupInput="ngModel">
+        <option class="form-control" *ngFor="let ageGroup of ageGroups" [value]="ageGroup">{{ageGroup}}</option>
+      </select>
+      <div class="alert" [class.alert-warning]="ageGroupInput.invalid && ageGroupInput.touched">Field is Required</div>
+    </div>
+    <div class="form-group">
+      <label for="residence">What's your area of residence and have you noticed any vehicles fitted with simba speed Governor in your residence ?</label>
+      <input 
+        required
+        #residenceInput="ngModel" 
+        class="form-control" 
+        [class.is-invalid]="residenceInput.invalid && residenceInput.touched"
+        type="text" 
+        name="residence" 
+        id="residence" 
+        [(ngModel)]="survey.residence"
+      >
+      <div class="alert" [class.alert-warning]="residenceInput.invalid && residenceInput.touched">Field is Required</div>
+    </div>
+    <div class="form-group">
+      <label for="rate">How would you rate Simba speed Governor?</label>
+      <select class="form-control" id="rate" name="rate" [(ngModel)]="survey.rate" required #rateInput="ngModel">
+        <option class="form-control" *ngFor="let rate of rates" [value]="rate">{{rate}}</option>
+      </select>
+      <div class="alert" [class.alert-warning]="rateInput.invalid && rateInput.touched">Field is Required</div>
+    </div>
+    <div class="form-group">
+      <label for="suggestions">Tell us in your own words how we can improve our products and services.</label>
+      <textarea 
+        required
+        #suggestionsInput="ngModel"
+        class="form-control" 
+        [class.is-invalid]="suggestionsInput.invalid && suggestionsInput.touched"
+        name="suggestions" 
+        id="suggestions" 
+        cols="30" 
+        rows="5" 
+        [(ngModel)]="survey.suggestions"
+      ></textarea>
+      <div class="alert" [class.alert-warning]="suggestionsInput.invalid && suggestionsInput.touched">Field is Required</div>
+    </div>
+    <button [disabled]="surveyForm.form.invalid" class="btn btn-submit" type="submit">Submit</button>
+  </form>
+</section>

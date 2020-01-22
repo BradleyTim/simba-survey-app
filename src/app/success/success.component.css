@@ -1,0 +1,27 @@
+.success-page {
+  width: 100%;
+  height: 60vh;
+  margin: 0 auto;
+  border-bottom: .5px solid #eee;
+}
+
+.jumbotron {
+  width: 80%;
+  height: 100%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.btn-success {
+    background: var(--secondary-color);
+    color: #fff;
+}
+
+.btn-success:hover {
+    background: #fff;
+    color: var(--secondary-color);
+}

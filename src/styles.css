@@ -1,0 +1,47 @@
+:root {
+  --primary-color: #eee;
+  --secondary-color: rgb(58, 236, 58);
+  --info-color: rgb(198, 236, 28);
+  --danger-color: rgb(247, 60, 60);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+a {
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+.card {
+  border: 1px solid #eee;
+  border-radius: 3px;
+  padding: 1rem;
+  margin: .75rem 0;
+}
+
+.btn {
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  padding: .75rem 1.5rem;
+  margin: .75rem 0;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
