@@ -1,6 +1,6 @@
 <section class="surveys-container" *ngIf="surveys.length > 0; else noSurveys">
   <div
-    [routerLink]="['/results', survey.name]"
+    [routerLink]="['/results', survey.id]"
     class="survey"
     *ngFor="let survey of surveys"
   >

@@ -1,5 +1,5 @@
 <section class="survey-detail-page">
-  <div class="survey-detail-container">
+  <div class="survey-detail-container" *ngIf="survey">
     <h3>Person: {{survey.name | titlecase}}</h3>
     <p>
       <strong>Email:</strong> 

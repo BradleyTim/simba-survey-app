@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../shared/data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Survey } from '../shared/survey';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: "app-surveydetail",
@@ -21,9 +20,10 @@ export class SurveydetailComponent implements OnInit {
 
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get('id');
-    this.survey = this.dataService.getOneSurvey(id).subscribe(item => {
-      console.log(item.id);
-      return {
+    console.log(id);
+    this.dataService.getOneSurvey(id).subscribe(item => {
+      console.log({id: item.id, ...item.data()});
+      return this.survey = {
         id: item.id,
         ...Object.assign({}, item.data()),
       }
