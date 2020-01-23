@@ -119,10 +119,14 @@
     </div>
     <div class="form-group">
       <label for="ageGroup">Which Age group are you in? </label>
-      <select class="form-control" id="ageGroup" name="ageGroup" [(ngModel)]="survey.ageGroup" required #ageGroupInput="ngModel">
+      <!-- <select class="form-control" id="ageGroup" name="ageGroup" [(ngModel)]="survey.ageGroup" required #ageGroupInput="ngModel">
         <option class="form-control" *ngFor="let ageGroup of ageGroups" [value]="ageGroup">{{ageGroup}}</option>
-      </select>
-      <div class="alert" [class.alert-warning]="ageGroupInput.invalid && ageGroupInput.touched">Field is Required</div>
+      </select> -->
+      <div class="radio" *ngFor="let agegroup of ageGroups">
+        <input required #ageGroupInput="ngModel" type="radio" [value]="agegroup" name="ageGroup" [(ngModel)]="survey.ageGroup">
+        {{agegroup}}
+      </div>
+      <!-- <div class="alert" [class.alert-warning]="ageGroupInput.invalid && ageGroupInput.touched">Field is Required</div> -->
     </div>
     <div class="form-group">
       <label for="residence">What's your area of residence and have you noticed any vehicles fitted with simba speed Governor in your residence ?</label>
@@ -140,10 +144,14 @@
     </div>
     <div class="form-group">
       <label for="rate">How would you rate Simba speed Governor?</label>
-      <select class="form-control" id="rate" name="rate" [(ngModel)]="survey.rate" required #rateInput="ngModel">
+      <!-- <select class="form-control" id="rate" name="rate" [(ngModel)]="survey.rate" required #rateInput="ngModel">
         <option class="form-control" *ngFor="let rate of rates" [value]="rate">{{rate}}</option>
-      </select>
-      <div class="alert" [class.alert-warning]="rateInput.invalid && rateInput.touched">Field is Required</div>
+      </select> -->
+      <div class="radio" *ngFor="let rate of rates">
+        <input required #rateInput="ngModel" type="radio" [value]="rate" name="rate" [(ngModel)]="survey.rate">
+        {{rate}}
+      </div>
+      <!-- <div class="alert" [class.alert-warning]="rateInput.invalid && rateInput.touched">Field is Required</div> -->
     </div>
     <div class="form-group">
       <label for="suggestions">Tell us in your own words how we can improve our products and services.</label>
