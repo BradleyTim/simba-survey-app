@@ -10,7 +10,7 @@ import { Survey } from '../shared/survey';
 })
 export class SurveydetailComponent implements OnInit {
 
-  survey;
+  survey: Survey;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,13 +20,11 @@ export class SurveydetailComponent implements OnInit {
 
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get('id');
-    console.log(id);
     this.dataService.getOneSurvey(id).subscribe(item => {
-      console.log({id: item.id, ...item.data()});
       return this.survey = {
         id: item.id,
         ...Object.assign({}, item.data()),
-      }
+      } as Survey;
     });
   }
 
