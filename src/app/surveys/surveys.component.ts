@@ -9,7 +9,7 @@ import { Survey } from '../shared/survey';
 })
 export class SurveysComponent implements OnInit {
 
-  surveys = [];
+  surveys: Survey[] = [];
 
   constructor(private dataService: DataService) {}
 
@@ -19,8 +19,10 @@ export class SurveysComponent implements OnInit {
         return {
           id: item.payload.doc.id,
           ...Object.assign({}, item.payload.doc.data())
-        };
-      })
+        } as Survey;
+      });
+
+      this.surveys = this.surveys.sort((a, b) => a.name.localeCompare(b.name));
     });
   }
 }

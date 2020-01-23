@@ -16,7 +16,7 @@ export class DataService {
   }
 
   getSurveys() {
-    return this.firestore.collection('surveys', (surveyRef) => surveyRef.orderBy('/name', 'asc')).snapshotChanges();
+    return this.firestore.collection('surveys', (surveyRef) => surveyRef.orderBy('name', 'asc')).snapshotChanges();
   }
 
   addSurvey(data) {
