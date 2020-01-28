@@ -1,8 +1,9 @@
 <section class="survey-form">
   <form #surveyForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
     <h3>Simba Survey</h3>
+    <p>Thank you for choosing Simba Speed Governor. To help us improve our product and service experience, we would like to ask you a few questions. It will take less than 3 minutes and your answers will help us make Simba Speed Governor better for you and other users</p>
     <div class="form-group">
-      <label for="name">What is your name?</label>
+      <label for="name">Kindly input your name below</label>
       <input 
         required
         #nameInput="ngModel"
@@ -16,7 +17,7 @@
       <div class="alert" [class.alert-warning]="nameInput.invalid && nameInput.touched">Name is Required</div>
     </div>
     <div class="form-group">
-      <label for="email">Email</label>
+      <label for="email">Kindly input your email address below</label>
       <input 
         required
         #emailInput="ngModel"
@@ -31,35 +32,41 @@
     </div>
     <div class="form-group">
       <label for="get-to-know-us">How did you know about simba speed governor or Numeral IOT?</label>
-      <textarea 
-        required
-        #getToKnowUsInput="ngModel"
-        class="form-control"
-        [class.is-invalid]="getToKnowUsInput.invalid && getToKnowUsInput.touched" 
-        name="get-to-know-us" 
-        id="get-to-know-us" 
-        cols="30" 
-        rows="5" 
-        [(ngModel)]="survey.getToKnowUs"
-      ></textarea>
-      <div class="alert" [class.alert-warning]="getToKnowUsInput.invalid && getToKnowUsInput.touched">Field is Required</div>
+      <div class="radio" *ngFor="let know of getToKnowAboutUs">
+        <input required #getToKnowUsInput="ngModel" type="radio" [value]="know" name="get-to-know-us" [(ngModel)]="survey.howDidYougetToKnowUs">
+        {{know}}
+      </div>
     </div>
     <div class="form-group">
-      <label for="purchase-location">Where did you purchase the Simba Speed Governor?</label>
-      <input 
-        required
-        #purchaseLocationInput="ngModel"
-        class="form-control" 
-        [class.is-invalid]="purchaseLocationInput.invalid && purchaseLocationInput.touched"
-        type="text" 
-        name="purchase-location" 
-        id="purchase-location" 
-        [(ngModel)]="survey.purchaseLocation"
-      >
-      <div class="alert" [class.alert-warning]="purchaseLocationInput.invalid && purchaseLocationInput.touched">Field is Required</div>
+      <label for="internet">If your answer to the previous question is "internet", kindly elaborate further</label>
+      <div class="radio" *ngFor="let social of socials">
+        <input #internetInput="ngModel" type="radio" [value]="social" name="internet" [(ngModel)]="survey.internet">
+        {{social}}
+      </div>
     </div>
     <div class="form-group">
-      <label for="purchase-reason">What made you purchase the Simba Speed Governor?</label>
+      <label for="usage-duration">How long have you used Simba Speed Governor?</label>
+      <div class="radio" *ngFor="let duration of usageDurations">
+        <input required #usageDurationInput="ngModel" type="radio" [value]="duration" name="usage-duration" [(ngModel)]="survey.usageDuration">
+        {{duration}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="rate">How would you rate Simba speed Governor?</label>
+      <div class="radio" *ngFor="let rate of rates">
+        <input required #rateInput="ngModel" type="radio" [value]="rate" name="rate" [(ngModel)]="survey.rate">
+        {{rate}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="purchase-location">Where did you puchase the Simba Speed Governor?</label>
+      <div class="radio" *ngFor="let location of purchaseLocations">
+        <input required #purchaseLocationInput="ngModel" type="radio" [value]="location" name="purchase-location" [(ngModel)]="survey.purchaseLocation">
+        {{location}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="purchase-reason">In your own words, tell us why you bought the Simba Speed Governor?</label>
       <textarea 
         required
         #purchaseReasonInput="ngModel"
@@ -74,7 +81,14 @@
       <div class="alert" [class.alert-warning]="purchaseReasonInput.invalid && purchaseReasonInput.touched">Field is Required</div>
     </div>
     <div class="form-group">
-      <label for="issues">What issues have you experienced with Simba Speed Governor?</label>
+      <label for="angels-eye">How often do you use "Angel's Eye" our Online fleet monitoring system?</label>
+      <div class="radio" *ngFor="let usage of angelsEyeUsages">
+        <input required #purchaseLocationInput="ngModel" type="radio" [value]="usage" name="angels-eye" [(ngModel)]="survey.angelsEye">
+        {{usage}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="issues">In your own words, tell us what issues you experienced with Simba Speed Governor</label>
       <textarea 
         required 
         #issuesInput="ngModel"
@@ -89,12 +103,12 @@
       <div class="alert" [class.alert-warning]="issuesInput.invalid && issuesInput.touched">Field is Required</div>
     </div>
     <div class="form-group">
-      <label for="benefits">What benefits did you experience with Simba Speed Governor?</label>
+      <label for="benefits">In your own words, tell us what benefits you experienced with Simba Speed Governor</label>
       <textarea 
         required
         #benefitsInput="ngModel"
         class="form-control" 
-        [class.invalid]="benefitsInput.invalid && benefitsInput.touched"
+        [class.is-invalid]="benefitsInput.invalid && benefitsInput.touched"
         name="benefits" 
         id="benefits" 
         cols="30" 
@@ -104,7 +118,14 @@
       <div class="alert" [class.alert-warning]="benefitsInput.invalid && benefitsInput.touched">Field is Required</div>
     </div>
     <div class="form-group">
-      <label for="occupation">What is your job Occupation and how has simba speed Governor impacted your work or life?</label>
+      <label for="ageGroup">Which Age group are you in? </label>
+      <div class="radio" *ngFor="let agegroup of ageGroups">
+        <input required #ageGroupInput="ngModel" type="radio" [value]="agegroup" name="ageGroup" [(ngModel)]="survey.ageGroup">
+        {{agegroup}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="occupation">What is your job Occupation and how has simba speed Governor impacted your work?</label>
       <input 
         required
         #occupationInput="ngModel"
@@ -113,60 +134,94 @@
         type="text" 
         name="occupation" 
         id="occupation" 
-        [(ngModel)]="survey.occupation"
+        [(ngModel)]="survey.occupationAndImpact"
       >
       <div class="alert" [class.alert-warning]="occupationInput.invalid && occupationInput.touched">Field is Required</div>
     </div>
     <div class="form-group">
-      <label for="ageGroup">Which Age group are you in? </label>
-      <!-- <select class="form-control" id="ageGroup" name="ageGroup" [(ngModel)]="survey.ageGroup" required #ageGroupInput="ngModel">
-        <option class="form-control" *ngFor="let ageGroup of ageGroups" [value]="ageGroup">{{ageGroup}}</option>
-      </select> -->
-      <div class="radio" *ngFor="let agegroup of ageGroups">
-        <input required #ageGroupInput="ngModel" type="radio" [value]="agegroup" name="ageGroup" [(ngModel)]="survey.ageGroup">
-        {{agegroup}}
+      <label for="customer-service">How would you rate the customer service of our staff, technicians or agents?</label>
+      <div class="radio" *ngFor="let service of customerServiceRates">
+        <input required #customerServiceInput="ngModel" type="radio" [value]="service" name="customer-service" [(ngModel)]="survey.customerService">
+        {{service}}
       </div>
-      <!-- <div class="alert" [class.alert-warning]="ageGroupInput.invalid && ageGroupInput.touched">Field is Required</div> -->
     </div>
     <div class="form-group">
-      <label for="residence">What's your area of residence and have you noticed any vehicles fitted with simba speed Governor in your residence ?</label>
+      <label for="customer-service-suggestion">If you are dissatisfied with our service, kindly elaborate on how we can improve our customer experience</label>
+      <input 
+        #suggestionsOnCustomerServiceInput="ngModel" 
+        class="form-control" 
+        [class.is-invalid]="suggestionsOnCustomerServiceInput.invalid && suggestionsOnCustomerServiceInput.touched"
+        type="text" 
+        name="customer-service-suggestion" 
+        id="customer-service-suggestion" 
+        [(ngModel)]="survey.suggestionsOnCustomerService"
+      >
+      <div class="alert" [class.alert-warning]="suggestionsOnCustomerServiceInput.invalid && suggestionsOnCustomerServiceInput.touched">Field is Required</div>
+    </div>
+    <div class="form-group">
+      <label for="county">Which county are you from?</label>
       <input 
         required
-        #residenceInput="ngModel" 
+        #countyInput="ngModel" 
         class="form-control" 
-        [class.is-invalid]="residenceInput.invalid && residenceInput.touched"
+        [class.is-invalid]="countyInput.invalid && countyInput.touched"
         type="text" 
-        name="residence" 
-        id="residence" 
-        [(ngModel)]="survey.residence"
+        name="county" 
+        id="county" 
+        [(ngModel)]="survey.county"
       >
-      <div class="alert" [class.alert-warning]="residenceInput.invalid && residenceInput.touched">Field is Required</div>
+      <div class="alert" [class.alert-warning]="countyInput.invalid && countyInput.touched">Field is Required</div>
     </div>
     <div class="form-group">
-      <label for="rate">How would you rate Simba speed Governor?</label>
-      <!-- <select class="form-control" id="rate" name="rate" [(ngModel)]="survey.rate" required #rateInput="ngModel">
-        <option class="form-control" *ngFor="let rate of rates" [value]="rate">{{rate}}</option>
-      </select> -->
-      <div class="radio" *ngFor="let rate of rates">
-        <input required #rateInput="ngModel" type="radio" [value]="rate" name="rate" [(ngModel)]="survey.rate">
-        {{rate}}
+      <label for="brand">Have you noticed any vehicles fitted with Simba Speed Governor in the area you stay?</label>
+      <div class="radio" *ngFor="let notice of notices">
+        <input required #customerServiceInput="ngModel" type="radio" [value]="notice" name="brand" [(ngModel)]="survey.noticeOfBrand">
+        {{notice}}
       </div>
-      <!-- <div class="alert" [class.alert-warning]="rateInput.invalid && rateInput.touched">Field is Required</div> -->
     </div>
     <div class="form-group">
-      <label for="suggestions">Tell us in your own words how we can improve our products and services.</label>
+      <label for="suggestions-on-product">Share with us your suggestions on how we can improve Simba Speed Governor.</label>
       <textarea 
         required
-        #suggestionsInput="ngModel"
+        #suggestionsOnProductInput="ngModel"
         class="form-control" 
-        [class.is-invalid]="suggestionsInput.invalid && suggestionsInput.touched"
-        name="suggestions" 
-        id="suggestions" 
+        [class.is-invalid]="suggestionsOnProductInput.invalid && suggestionsOnProductInput.touched"
+        name="suggestions-on-product" 
+        id="suggestions-on-product" 
         cols="30" 
         rows="5" 
-        [(ngModel)]="survey.suggestions"
+        [(ngModel)]="survey.suggestionsOnProductImprovememnt"
       ></textarea>
-      <div class="alert" [class.alert-warning]="suggestionsInput.invalid && suggestionsInput.touched">Field is Required</div>
+      <div class="alert" [class.alert-warning]="suggestionsOnProductInput.invalid && suggestionsOnProductInput.touched">Field is Required</div>
+    </div>
+    <div class="form-group">
+      <label for="next-product">Tell us in your own words which products or service we should launch next</label>
+      <textarea 
+        required
+        #nextProductOrServiceInput="ngModel"
+        class="form-control" 
+        [class.is-invalid]="nextProductOrServiceInput.invalid && nextProductOrServiceInput.touched"
+        name="next-product" 
+        id="next-product" 
+        cols="30" 
+        rows="5" 
+        [(ngModel)]="survey.nextProductOrService"
+      ></textarea>
+      <div class="alert" [class.alert-warning]="nextProductOrServiceInput.invalid && nextProductOrServiceInput.touched">Field is Required</div>
+    </div>
+    <div class="form-group">
+      <label for="recommend">Would you recommend Simba Speed Governor to other clients?</label>
+      <div class="radio" *ngFor="let recommendOption of recommendationOptions">
+        <input required #wouldRecommendInput="ngModel" type="radio" [value]="recommendOption" name="recommend" [(ngModel)]="survey.wouldRecommend">
+        {{recommendOption}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="survey-again">In future, would you be willing to take this survey again?</label>
+      <div class="radio" *ngFor="let surveyOption of surveyAgainOptions">
+        <input required #wouldTakeSurveyAgainInput="ngModel" type="radio" [value]="surveyOption" name="survey-again" [(ngModel)]="survey.wouldTakeSurveyAgain">
+        {{surveyOption}}
+      </div>
     </div>
     <button [disabled]="surveyForm.form.invalid" class="btn btn-submit" type="submit">Submit</button>
   </form>

@@ -26,20 +26,94 @@ export class SurveyformComponent implements OnInit {
     'Excellent'
   ];
 
+  getToKnowAboutUs: string[] = [
+    'Internet',
+    'Sales Agents',
+    'Newspaper',
+    'Referral from a friend',
+    'Television',
+  ];
+
+  purchaseLocations: string[] = [
+    'Headquaters at City Cabanas',
+    'Through sales agents countrywide',
+    'Through the internet',
+    'I have not bought simba speed governot yet',
+  ];
+
+  angelsEyeUsages: string[] = [
+    'All the Time',
+    'Less than 3 times a day',
+    'Less than 3 times a week',
+    'Never used it',
+  ];
+
+  socials: string[] = [
+    'Facebook',
+    'Twitter',
+    'LinkedIn',
+    'Google',
+    'Instagram',
+    'Website',
+    'Youtube'
+  ];
+
+  usageDurations: string[] = [
+    'Less than a week',
+    'Not more than 1 month',
+    'One to Three months',
+    'More than 3 months',
+  ];
+
+  customerServiceRates: string[] = [
+    'Very satisfied',
+    'Satisfied',
+    'Neutral',
+    'Dissatisfied',
+    'Very Dissatisfied',
+  ];
+
+  notices: string[] = [
+    'Yes',
+    'No',
+    'Not sure'
+  ];
+
+  recommendationOptions: string[] = [
+    'Yes',
+    'Maybe',
+    'No',
+  ];
+
+  surveyAgainOptions: string[] = [
+    'Yes',
+    'Maybe',
+    'No',
+  ];
+
   survey: Survey = {
     id: '',
     name: '',
     email: '',
-    getToKnowUs: '',
+    howDidYougetToKnowUs: '',
+    internet: '',
+    usageDuration: '',
+    rate: '',
     purchaseLocation: '',
     purchaseReason: '',
+    angelsEye: '',
     issues: '',
     benefits: '',
-    occupation: '',
     ageGroup: '',
-    residence: '',
-    rate: '',
-    suggestions: ''
+    occupationAndImpact: '',
+    customerService: '',
+    suggestionsOnCustomerService: '',
+    county: '',
+    noticeOfBrand: '',
+    suggestionsOnProductImprovememnt: '',
+    nextProductOrService: '',
+    wouldRecommend: '',
+    wouldTakeSurveyAgain: '',
   };
 
   constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }
