@@ -110,7 +110,7 @@ export class SurveyformComponent implements OnInit {
     suggestionsOnCustomerService: '',
     county: '',
     noticeOfBrand: '',
-    suggestionsOnProductImprovememnt: '',
+    suggestionsOnProductImprovement: '',
     nextProductOrService: '',
     wouldRecommend: '',
     wouldTakeSurveyAgain: '',

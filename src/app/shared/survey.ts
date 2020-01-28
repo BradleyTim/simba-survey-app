@@ -17,7 +17,7 @@ export interface Survey {
     suggestionsOnCustomerService?: string,
     county: string,
     noticeOfBrand: string,
-    suggestionsOnProductImprovememnt: string,
+    suggestionsOnProductImprovement: string,
     nextProductOrService: string,
     wouldRecommend: string,
     wouldTakeSurveyAgain: string,

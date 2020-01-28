@@ -7,43 +7,79 @@
     </p>
     <p>
       <strong>How did you know about simba speed governor or Numeral IOT? </strong> 
-      <span>{{survey.getToKnowUs | titlecase}}</span>
+      <span>{{survey.howDidYougetToKnowUs | titlecase}}</span>
+    </p>
+    <p *ngIf="survey.internet !== ''">
+      <strong>If your answer to the previous question is "internet", kindly elaborate further. </strong> 
+      <span>{{survey.internet | titlecase}}</span>
+    </p>
+    <p>
+      <strong>How long have you used Simba Speed Governor? </strong> 
+      <span>{{survey.usageDuration | titlecase}}</span>
+    </p>
+    <p>
+      <strong>How would you rate Simba speed Governor? </strong> 
+      <span>{{survey.rate | titlecase}}</span>
     </p>
     <p>
       <strong>Where did you purchase the Simba Speed Governor? </strong> 
       <span>{{survey.purchaseLocation | titlecase}}</span>
     </p>
     <p>
-      <strong>What made you purchase the Simba Speed Governor? </strong> 
+      <strong>Tell us why you bought the Simba Speed Governor. </strong> 
       <span>{{survey.purchaseReason | titlecase}}</span>
     </p>
     <p>
-      <strong>What issues have you experienced with Simba Speed Governor? </strong> 
+      <strong>How often do you use "Angel's Eye" our Online fleet monitoring system? </strong> 
+      <span>{{survey.angelsEye | titlecase}}</span>
+    </p>
+    <p>
+      <strong>Tell us what issues you experienced with Simba Speed Governor. </strong> 
       <span>{{survey.issues | titlecase}}</span>
     </p>
     <p>
-      <strong>What benefits did you experience with Simba Speed Governor? </strong> 
+      <strong>Tell us what benefits you experienced with Simba Speed Governor. </strong> 
       <span>{{survey.benefits | titlecase}}</span>
-    </p>
-    <p>
-      <strong>What is your job Occupation and how has simba speed Governor impacted your work or life? </strong> 
-      <span>{{survey.occupation | titlecase}}</span>
     </p>
     <p>
       <strong>Which Age group are you in? </strong> 
       <span>{{survey.ageGroup}}</span>
     </p>
     <p>
-      <strong>What's your area of residence and have you noticed any vehicles fitted with simba speed Governor in your residence? </strong> 
-      <span>{{survey.residence | titlecase}}</span>
+      <strong>What is your job Occupation and how has simba speed Governor impacted your work? </strong> 
+      <span>{{survey.occupationAndImpact | titlecase}}</span>
     </p>
     <p>
-      <strong>How would you rate Simba speed Governor? </strong> 
-      <span>{{survey.rate}}</span>
+      <strong>How would you rate the customer service of our staff, technicians or agents? </strong> 
+      <span>{{survey.customerService | titlecase}}</span>
+    </p>
+    <p *ngIf="survey.suggestionsOnCustomerService !== ''">
+      <strong>If you are dissatisfied with our service, kindly elaborate on how we can improve our customer experience </strong> 
+      <span>{{survey.suggestionsOnCustomerService | titlecase}}</span>
     </p>
     <p>
-      <strong>Tell us in your own words how we can improve our products and services. </strong> 
-      <span>{{survey.suggestions | titlecase}}</span>
+      <strong>Which county are you from? </strong> 
+      <span>{{survey.county | titlecase}}</span>
+    </p>
+    <p>
+      <strong>Have you noticed any vehicles fitted with Simba Speed Governor in the area you stay? </strong> 
+      <span>{{survey.noticeOfBrand | titlecase}}</span>
+    </p>
+    <p>
+      <strong>Share with us your suggestions on how we can improve Simba Speed Governor. </strong> 
+      <span>{{survey.suggestionsOnProductImprovement | titlecase}}</span>
+    </p>
+    <p>
+      <strong>Tell us in your own words which products or service we should launch next </strong> 
+      <span>{{survey.nextProductOrService | titlecase}}</span>
+    </p>
+    <p>
+      <strong>Would you recommend Simba Speed Governor to other clients? </strong> 
+      <span>{{survey.wouldRecommend | titlecase}}</span>
+    </p>
+    <p>
+      <strong>In future, would you be willing to take this survey again? </strong> 
+      <span>{{survey.wouldTakeSurveyAgain | titlecase}}</span>
     </p>
   </div>
 
