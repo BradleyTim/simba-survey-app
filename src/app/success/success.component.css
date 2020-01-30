@@ -25,3 +25,31 @@
     background: #fff;
     color: var(--secondary-color);
 }
+
+.share {
+  margin: .75rem 0;
+  font-size: 1.25rem;
+}
+
+.share a {
+  color: var(--secondary-color);
+  margin: 0 .75rem;
+}
+
+.fb-share {
+  color: #3b5998;
+}
+
+.tw-share {
+  color: #00acee;
+}
+
+.ws-share {
+  color: #25d366;
+}
+
+p {
+  font-size: .9rem;
+  color: #707070;
+  margin-top: .75rem;
+}
