@@ -18,6 +18,7 @@ import { SurveyformComponent } from "./surveyform/surveyform.component";
 import { SurveysComponent } from "./surveys/surveys.component";
 import { SurveydetailComponent } from "./surveydetail/surveydetail.component";
 import { DataService } from './shared/data.service';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { DataService } from './shared/data.service';
     SuccessComponent,
     SurveyformComponent,
     SurveysComponent,
-    SurveydetailComponent
+    SurveydetailComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

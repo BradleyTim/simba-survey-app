@@ -1,6 +1,6 @@
 :root {
   --primary-color: #eee;
-  --secondary-color: rgb(58, 236, 58);
+  --secondary-color: #3AB66A;
   --info-color: rgb(198, 236, 28);
   --danger-color: rgb(247, 60, 60);
 }
@@ -12,7 +12,7 @@
 }
 
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -36,7 +36,7 @@ li {
 .btn {
   text-align: center;
   border: 1px solid #eee;
-  border-radius: 3px;
+  border-radius: 2px;
   padding: .75rem 1.5rem;
   margin: .75rem 0;
 }
