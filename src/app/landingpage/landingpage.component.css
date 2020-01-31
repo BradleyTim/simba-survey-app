@@ -14,8 +14,8 @@
 .message {
     flex: 1;
     text-align: left;
-    padding: 1rem;
-    margin-right: -450px;
+    padding: 3rem;
+    margin-right: -650px;
     z-index: 5;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .phone-image {
-    width: 600px;
+    width: 700px;
 }
 
 .btn-landing {
