@@ -2,30 +2,31 @@
     width: 100%;
     min-height: 60vh;
     margin: 0 auto;
+    overflow-x: hidden;
 }
 
 .jumbotron {
     width: 90%;
     height: 100%;
-    margin: 2rem auto;
+    margin: 1rem auto;
     display: flex;
 }
 
 .message {
     flex: 1;
     text-align: left;
-    padding: 3rem;
-    margin-right: -650px;
+    padding: 4rem;
+    margin-right: -750px;
     z-index: 5;
 }
 
 .landing-image {
     flex: 1;
-    margin-left: 100px;
+    margin-right: -200px;
 }
 
 .phone-image {
-    width: 700px;
+    width: 900px;
 }
 
 .btn-landing {
@@ -45,7 +46,7 @@
 
 
 h2 {
-    font-size: 3.25rem;
+    font-size: 4rem;
     font-weight: 300;
     color: #384150;
 }
@@ -61,7 +62,7 @@ p {
     .jumbotron {
       width: 90%;
       padding: 1rem 0;
-      margin: 1rem auto;
+      margin: 2rem auto;
       display: block;
     }
 
