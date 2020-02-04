@@ -32,6 +32,38 @@
   height: auto;
 }
 
+@media only screen and (max-width: 1024px) {
+
+  .aboutpage {
+    min-height: 100vh;
+  }
+
+  .jumbotron {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .about-info {
+    padding: 0;
+  }
+
+  .about-info h2 {
+    display: block;
+    text-align: center;
+    color: var(--secondary-color);
+  }
+
+  .about-info p {
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: auto;
+    /* display: none; */
+  }
+}
+
 @media only screen and (max-width: 500px) {
 
   .aboutpage {

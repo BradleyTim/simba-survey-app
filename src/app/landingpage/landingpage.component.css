@@ -1,14 +1,15 @@
 .landingpage {
     width: 100%;
-    min-height: 60vh;
+    min-height: 70vh;
     margin: 0 auto;
     overflow-x: hidden;
+    margin-bottom: -4rem;
 }
 
 .jumbotron {
     width: 90%;
     height: 100%;
-    margin: 1rem auto;
+    margin: 0 auto;
     display: flex;
 }
 
@@ -55,6 +56,29 @@ p {
     color:var(--secondary-color);
     font-size: 1.25rem;
     margin: 1rem 0;
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .jumbotron {
+    width: 90%;
+    padding: 1rem 0;
+    margin: 2rem auto;
+    display: block;
+  }
+
+  .message {
+    width: 100%;
+    margin: 0 auto;
+    padding: .5rem;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .landing-image {
+    display: none;
+  }
+
 }
 
 @media only screen and (max-width: 500px) {
