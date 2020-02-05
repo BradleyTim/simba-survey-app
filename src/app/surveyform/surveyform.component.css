@@ -1,5 +1,5 @@
 .survey-form {
-    width: 80%;
+    width: 90%;
     height: 100%;
     margin: 0 auto;
 }
@@ -27,6 +27,11 @@ h3 {
 
 .radio {
   margin: .45rem 0;
+}
+
+input[type=radio] {
+    border: 1px solid #707070;
+    border-radius: 0;
 }
 
 .form-control:focus {
