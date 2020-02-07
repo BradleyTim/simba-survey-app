@@ -25,6 +25,6 @@ a {
 @media only screen and (max-width: 500px) {
   h2 a .simba-logo {
     width: 120px;
-    margin-left: 0;
+    margin-left: -25px;
   }
 }
