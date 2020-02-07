@@ -1,9 +1,9 @@
 .landingpage {
     width: 100%;
-    min-height: 100vh; /*70vh*/
-    margin: 1rem auto;
-    overflow-x: hidden;
-    margin-bottom: -10rem;
+    max-height: 60vh;
+    margin: 0 auto;
+    overflow: hidden;
+    /* margin-bottom: -10rem; */
 }
 
 .jumbotron {
@@ -19,30 +19,29 @@
     padding: 3rem 4rem 4rem 0;
     margin-right: -30%;
     z-index: 5;
-    /* background-color: darkgoldenrod; */
 }
 
 
 .governor-image {
     flex: 1;
-    margin-top: 23.5%;
-    margin-right: -55%;
+    margin-top: 20%; /*23.5*/
+    margin-right: -62%; /*55*/
     z-index: 3;
 }
 
 .governor-image img {
-    width: 40%;
+    width: 35%; /*40*/
 }
 
 .phone-image {
     flex: 1;
     margin-top: 0%;
-    margin-right: -55%;
+    margin-right: -60%;/*55*/
     /* background-color: brown; */
 }
 
 .phone-image img {
-    width: 80%;
+    width: 67%;
 }
 
 .btn-landing {
@@ -71,7 +70,7 @@ h2 {
 p {
     color:var(--secondary-color);
     font-size: 1.25rem;
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
 
 @media only screen and (max-width: 1024px) {
